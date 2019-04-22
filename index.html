@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <style>
+    body {
+      margin:0;
+      background: black;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      display: none;
+      z-index: 99;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      background: rgba(0,0,0,0.8);
+      animation: fadeIn 300ms;
+    }
+    .container.active {
+      display: block;
+    }
+    .page {
+      padding: 50px;
+    }
+    .levels {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      overflow: visible;
+    }
+    .levels * {
+      padding: 20px;
+      background: #999999;
+      display: block;
+      margin: 20px;
+    }
+    .close {
+      color: white;
+      text-align: center;
+    }
+    .infos {
+      position: absolute;
+      z-index: 99999;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      width: 100%
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+    }
+  </style>
+  <body>
+    <div class="infos">
+  <p> Deaths: <span id="deaths">0</span></p>
+  <p onclick="toggleMenu()">MENU</p>
+    </div>
+  <div class="container">
+    <div class="page levels">
+      <span onclick="toggleMenu();loadGeneratedLevel({difficulty: 1})">generate easy</span>
+      <span onclick="toggleMenu();loadGeneratedLevel({difficulty: 2})">generate medium</span>
+      <span onclick="toggleMenu();loadGeneratedLevel({difficulty: 3})">generate hard</span>
+      <span onclick="toggleMenu();loadGeneratedLevel({difficulty: 4})">generate ultra hard</span>
+      <span onclick="toggleMenu();loadGeneratedLevel({difficulty: 5})">generate ultra mega hard</span>
+      <span onclick="toggleMenu();loadGeneratedLevel({difficulty: 6})">generate hardest thing in the universe</span>
+      <span onclick="toggleMenu();loadGeneratedLevel({difficulty: 7})">generate THE hardest thing in the universe</span>
+    </div>
+    <div class="close">
+    </div>
+  </div>
+
+  <canvas></canvas>
+    <script src="./SAT.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
