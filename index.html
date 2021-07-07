@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: black;
+      }
+      canvas {
+        background: transparent;
+        position: absolute;
+      }
+      .full-width {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input class="full-width" id="timeSlider" type="range" min="0" max="10000" />
+    <input class="full-width" id="timeNumber" type="number" />
+    <label style="color: white">
+      <input type="checkbox" id="toggleCollisions" checked/>
+      Toggle Collision
+    </label>
+
+
+    <div id="game"></div>
+    <script src="src/index.js" type="module"></script>
+  </body>
+</html>
